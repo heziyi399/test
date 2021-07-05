@@ -70,7 +70,24 @@ public void go() throws IOException{
     }
     public static void main(String[]args) throws ClassNotFoundException {
 //获得类加载器可以加载的路径
-        System.out.println(System.getProperty("java.class.path"));
+        Class cc = Class.forName("java.lang.Thread");
+        System.out.println(cc);
+
+        Class oo = NewSocket.class;
+        Thread t1 = new Thread();
+        Class o2 = t1.getClass();
+        System.out.println(oo.getPackage());
+        System.out.println(oo.getTypeParameters());
+        System.out.println(o2);
+        example aexample = example.AB;
+        for(example ae:example.values())
+            System.out.println(ae);
+        System.out.println(example.values());
     }
+public enum example{
+    AB,
+    BC,
+    CD
+}
 
 }
